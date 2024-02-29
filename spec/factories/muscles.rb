@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :muscle do
-    name { "MyString" }
+    name { 'MyString' }
     muscle_group { nil }
   end
 end

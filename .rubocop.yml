@@ -41,7 +41,7 @@ Style/GlobalStdStream:
     - 'config/environments/production.rb'
 
 Style/StringLiterals:
-  EnforcedStyle: double_quotes
+  EnforcedStyle: single_quotes
 
 Style/SymbolProc:
   AllowMethodsWithArguments: true

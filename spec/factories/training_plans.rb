@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :training_plan do
-    name { "MyString" }
+    name { 'MyString' }
     user { nil }
   end
 end
