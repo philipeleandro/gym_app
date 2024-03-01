@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TrainingPlan < ApplicationRecord
   has_many :muscle_groups
 
