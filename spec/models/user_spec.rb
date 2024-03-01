@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
   end
 
   context 'when user is not valid' do
-    let(:instance) { User.new }
+    let(:instance) { described_class.new }
 
     it { expect(instance.valid?).to eq(false) }
   end
