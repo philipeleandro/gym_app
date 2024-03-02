@@ -14,7 +14,6 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 #
-require 'capybara/rails'
 
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
