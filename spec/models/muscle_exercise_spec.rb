@@ -3,10 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe MuscleExercise, type: :model do
-  let(:user) { create(:user) }
-  let(:training_plan) { create(:training_plan, user: user) }
-  let(:muscle_group) { create(:muscle_group, training_plan: training_plan) }
-  let(:muscle) { create(:muscle, muscle_group: muscle_group) }
+  let(:muscle) { create(:muscle) }
   let(:exercise) { create(:exercise) }
   let(:instance) { create(:muscle_exercise, muscle: muscle, exercise: exercise) }
 
