@@ -28,7 +28,7 @@ RSpec.describe Muscle, type: :model do
     context 'when name is not unique' do
       let!(:instance_second) { create(:muscle, muscle_group: muscle_group) }
 
-      it { should validate_uniqueness_of(:name) }
+      it { is_expected.to validate_uniqueness_of(:name) }
     end
   end
 end

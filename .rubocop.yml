@@ -21,6 +21,9 @@ Metrics/MethodLength:
   CountAsOne: ['array', 'hash', 'heredoc']
   Max: 12
 
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
 Naming/VariableNumber:
   Enabled: false
 
@@ -63,3 +66,5 @@ Style/BlockComments:
   Exclude:
   - 'spec/**/*'
 
+RSpec/LetSetup:
+  Enabled: false

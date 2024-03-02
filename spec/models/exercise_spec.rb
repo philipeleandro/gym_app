@@ -17,7 +17,7 @@ RSpec.describe Exercise, type: :model do
     end
 
     context 'when name is not unique' do
-      it { should validate_uniqueness_of(:name) }
+      it { is_expected.to validate_uniqueness_of(:name) }
     end
   end
 end
