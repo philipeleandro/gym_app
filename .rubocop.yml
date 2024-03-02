@@ -68,3 +68,6 @@ Style/BlockComments:
 
 RSpec/LetSetup:
   Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false

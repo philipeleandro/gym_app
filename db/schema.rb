@@ -10,11 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_01_233834) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_02_123051) do
   create_table "exercises", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "muscle_exercises", force: :cascade do |t|
+    t.integer "repetition"
+    t.integer "set"
+    t.string "observation"
+    t.integer "muscle_id", null: false
+    t.integer "exercise_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exercise_id"], name: "index_muscle_exercises_on_exercise_id"
+    t.index ["muscle_id"], name: "index_muscle_exercises_on_muscle_id"
   end
 
   create_table "muscle_groups", force: :cascade do |t|
@@ -48,6 +60,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_01_233834) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "muscle_exercises", "exercises"
+  add_foreign_key "muscle_exercises", "muscles"
   add_foreign_key "muscle_groups", "training_plans"
   add_foreign_key "muscles", "muscle_groups"
   add_foreign_key "training_plans", "users"
