@@ -56,3 +56,7 @@ group :test do
   gem 'shoulda-matchers', '~> 6.0'
   gem 'webdrivers'
 end
+
+gem 'cssbundling-rails', '~> 1.4'
+
+gem 'jsbundling-rails', '~> 1.3'
