@@ -10,15 +10,15 @@ RSpec.describe MuscleExercise, type: :model do
 
   describe 'validations' do
     context 'when belongs_to' do
-      it { should belong_to(:muscle) }
-      it { should belong_to(:exercise) }
-      it { should validate_presence_of(:set) }
-      it { should validate_presence_of(:repetition) }
+      it { is_expected.to belong_to(:muscle) }
+      it { is_expected.to belong_to(:exercise) }
+      it { is_expected.to validate_presence_of(:set) }
+      it { is_expected.to validate_presence_of(:repetition) }
     end
 
     context 'when must have attribute' do
-      it { should validate_presence_of(:set) }
-      it { should validate_presence_of(:repetition) }
+      it { is_expected.to validate_presence_of(:set) }
+      it { is_expected.to validate_presence_of(:repetition) }
     end
   end
 
