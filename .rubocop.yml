@@ -71,3 +71,6 @@ RSpec/LetSetup:
 
 Rails/HasManyOrHasOneDependent:
   Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
