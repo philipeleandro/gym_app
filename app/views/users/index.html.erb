@@ -1,0 +1,17 @@
+<h1>Lista de usuários</h1>
+
+<% if @users.empty? %>
+  <p>Não há usuários cadastrados</p>
+<% end %>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Ação</th>
+  </tr>
+  <tr>
+    <% @users.each do |user| %>
+      <td><%= user.name %></td>
+    <% end %>
+  </tr>
+</table>
