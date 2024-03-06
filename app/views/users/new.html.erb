@@ -1,0 +1,14 @@
+<% if @user.errors.any? %>
+  <p>Verifique os erros abaixo:</p>
+  <ul>
+    <% @user.errors.full_messages.each do |error_message| %>
+      <li><%= error_message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h1>Cadastro de novo usuário</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Voltar', root_path %>
