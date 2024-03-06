@@ -74,3 +74,6 @@ Rails/HasManyOrHasOneDependent:
 
 RSpec/NestedGroups:
   Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 5
