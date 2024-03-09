@@ -12,7 +12,7 @@ RSpec.describe UsersController, type: :system do
         click_on 'Cadastrar'
       end
 
-      it { expect(current_path).to eq(users_path) }
+      it { expect(page).to have_current_path(users_path) }
       it { expect(page).to have_content('Teste') }
       it { expect(page).to have_content('Usuário cadastrado com sucesso!') }
     end

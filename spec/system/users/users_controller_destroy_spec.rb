@@ -10,7 +10,7 @@ RSpec.describe UsersController, type: :system do
       visit users_path
       click_on 'Apagar'
 
-      expect(current_path).to eq(users_path)
+      expect(page).to have_current_path(users_path)
       expect(page).to have_content('Usuário deletado com sucesso!')
       expect(User.all.count).to eq(0)
     end
