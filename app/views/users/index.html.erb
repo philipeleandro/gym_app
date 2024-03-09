@@ -18,6 +18,9 @@
       <tr>
         <td><%= user.name %></td>
       </tr>
+      <tr>
+        <td><%= link_to 'Apagar', user_delete_path(user), data: {"turbo-method": :delete} %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>
