@@ -1,0 +1,27 @@
+<h1>Fichas de <%= @user.name %></h1>
+
+<% if @training_plans.empty? %>
+  <p>Não há fichas cadastradas</p>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Ação</th>
+    </tr>
+   </thead>
+  <tbody>
+    <%  @training_plans.each do |plan| %>
+      <tr>
+        <td><%= plan.name %></td>
+      </tr>
+      <tr>
+        <%# Colocar link para apagar ficha %>
+        <%# Colocar link para editar ficha (talvez) %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Voltar', users_path %>

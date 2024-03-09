@@ -19,7 +19,8 @@
         <td><%= user.name %></td>
       </tr>
       <tr>
-        <td><%= link_to 'Apagar', user_delete_path(user), data: {"turbo-method": :delete} %></td>
+        <td><%= link_to 'Apagar', user_delete_path(user), data: {'turbo-method': :delete} %></td>
+        <td><%= link_to 'Fichas', user_training_plans_path(user_id: user.id) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   get '/users/new', to: 'users#new'
   post '/users', to: 'users#create'
   delete '/users/:id', to: 'users#destroy', as: 'user_delete'
+
+  # training_plans
+  get '/user_training_plans/:user_id', to: 'training_plans#user_plans_list', as: 'user_training_plans'
 end
