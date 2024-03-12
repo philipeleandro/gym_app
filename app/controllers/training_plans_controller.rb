@@ -7,6 +7,10 @@ class TrainingPlansController < ApplicationController
     @training_plans = @user.training_plans
   end
 
+  def new
+    @training_plan = TrainingPlan.new
+  end
+
   private
 
   def find_user
