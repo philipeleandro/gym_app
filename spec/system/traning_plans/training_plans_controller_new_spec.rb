@@ -4,7 +4,6 @@ require 'rails_helper'
 
 RSpec.describe TrainingPlansController, type: :system do
   let!(:user) { create(:user) }
-  # let!(:training_plan) { create(:training_plan, user: user) }
 
   context 'when create a new training plan' do
     context 'with success' do
