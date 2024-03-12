@@ -1,0 +1,14 @@
+<% if @training_plan.errors.any? %>
+  <p>Verifique os erros abaixo:</p>
+  <ul>
+    <% @training_plan.errors.full_messages.each do |error_message| %>
+      <li><%= error_message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h1>Cadastro de nova ficha</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Voltar', user_training_plans_path(params[:user_id]) %>
