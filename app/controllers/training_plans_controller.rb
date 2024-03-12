@@ -22,6 +22,13 @@ class TrainingPlansController < ApplicationController
     end
   end
 
+  def destroy
+    @training_plan = TrainingPlan.find(params[:id])
+
+    @training_plan.destroy
+    redirect_to users_path, notice: 'Ficha deletada com sucesso!'
+  end
+
   private
 
   def training_plan_params
