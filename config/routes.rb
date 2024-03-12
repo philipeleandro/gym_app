@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   delete '/users/:id', to: 'users#destroy', as: 'user_delete'
 
   # training_plans
-  get '/training_plans/new', to: 'training_plans#new'
+  get '/users/:user_id/training_plans/new', to: 'training_plans#new', as: 'training_plan_new'
   get '/user_training_plans/:user_id', to: 'training_plans#user_plans_list', as: 'user_training_plans'
   get '/muscle_groups/:training_plans_id', to: 'muscle_groups#user_muscle_group_list', as: 'user_muscle_group_list'
 end
