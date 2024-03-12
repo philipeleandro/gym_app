@@ -15,4 +15,5 @@ Rails.application.routes.draw do
 
   # training_plans
   get '/user_training_plans/:user_id', to: 'training_plans#user_plans_list', as: 'user_training_plans'
+  get '/muscle_groups/:training_plans_id', to: 'muscle_groups#user_muscle_group_list', as: 'user_muscle_group_list'
 end
