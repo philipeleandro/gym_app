@@ -20,8 +20,8 @@
       </tr>
       <tr>
         <td><%= link_to 'Detalhes', user_muscle_group_list_path(plan.id) %></td>
-        <td><%= link_to 'Apagar', user_plans_delete_path(user_id: @user.id, id: plan.id), data: {'turbo-method': :delete}  %></td>
-        <%# Colocar link para editar ficha (talvez) %>
+        <td><%= link_to 'Apagar', user_plans_delete_path(user_id: @user.id, id: plan.id), data: {'turbo-method': :delete} %></td>
+        <td><%= link_to 'Editar', user_plans_edit_path(user_id: @user.id, id: plan.id) %></td>
       </tr>
     <% end %>
   </tbody>

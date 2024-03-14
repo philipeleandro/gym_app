@@ -1,4 +1,4 @@
-<%= form_with model: @traning_plan do |f| %>
+<%= form_with model: @traning_plan, method: method_patch_or_edit do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   post '/users/:user_id/training_plans/new', to: 'training_plans#create'
   get '/user_training_plans/:user_id', to: 'training_plans#user_plans_list', as: 'user_training_plans'
   delete '/users/:user_id/training_plans/:id', to: 'training_plans#destroy', as: 'user_plans_delete'
+  get '/users/:user_id/training_plans/:id/edit', to: 'training_plans#edit', as: 'user_plans_edit'
+  patch '/users/:user_id/training_plans/:id/edit', to: 'training_plans#update'
 
   # muscle_groups
   get '/muscle_groups/:training_plans_id', to: 'muscle_groups#user_muscle_group_list', as: 'user_muscle_group_list'
