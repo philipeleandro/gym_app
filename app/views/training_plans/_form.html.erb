@@ -4,5 +4,5 @@
 
   <% f.hidden_field :user_id, value: params[:user_id].to_i %>
 
-  <%= f.submit 'Cadastrar' %>
+  <%= f.submit update_or_create %>
 <% end %>
