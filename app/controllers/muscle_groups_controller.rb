@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class MuscleGroupsController < ApplicationController
-  before_action :find_traning_plan, only: [:user_muscle_group_list, :create]
+  before_action :find_traning_plan, only: %i[user_muscle_group_list create]
 
   def user_muscle_group_list
     @muscle_groups = @training_plan.muscle_groups

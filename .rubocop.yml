@@ -77,3 +77,6 @@ RSpec/NestedGroups:
 
 RSpec/MultipleExpectations:
   Max: 5
+
+Rails/ReversibleMigration:
+ Enabled: false
