@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TrainingPlansController < ApplicationController
-  before_action :find_user, only: [:user_plans_list]
+  before_action :find_user, only: %i[user_plans_list destroy]
 
   def user_plans_list
     @training_plans = @user.training_plans
@@ -41,7 +41,7 @@ class TrainingPlansController < ApplicationController
     @training_plan = TrainingPlan.find(params[:id])
 
     @training_plan.destroy
-    redirect_to users_path, notice: 'Ficha deletada com sucesso!'
+    redirect_to user_training_plans_path(@user), notice: 'Ficha deletada com sucesso!'
   end
 
   private

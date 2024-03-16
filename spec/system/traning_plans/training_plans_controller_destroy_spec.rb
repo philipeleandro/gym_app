@@ -14,7 +14,7 @@ RSpec.describe TrainingPlansController, type: :system do
     end
 
     it 'with success' do
-      expect(page).to have_current_path(users_path)
+      expect(page).to have_current_path(user_training_plans_path(user))
       expect(page).to have_content('Ficha deletada com sucesso!')
       expect(TrainingPlan.all.count).to eq(0)
     end
