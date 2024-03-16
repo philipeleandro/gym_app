@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class MuscleGroup < ApplicationRecord
-  has_many :exercise_group
+  has_many :exercise_group, dependent: :destroy
 
   belongs_to :training_plan
 
