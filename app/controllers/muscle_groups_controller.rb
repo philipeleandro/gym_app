@@ -18,14 +18,14 @@ class MuscleGroupsController < ApplicationController
       redirect_to user_muscle_group_list_path(@training_plan), notice: 'Grupo muscular criado com sucesso!'
     else
       flash.now[:alert] = 'Erro ao cadastrar grupo muscular!'
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   private
 
   def muscle_group_params
-    params.permit(:name, :day, :training_plan_id)
+    params.permit(:name, :training_plan_id)
   end
 
   def find_traning_plan

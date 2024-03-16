@@ -22,7 +22,7 @@ class TrainingPlansController < ApplicationController
       redirect_to user_training_plans_path(params[:user_id]), notice: 'Ficha atualizada com sucesso!'
     else
       flash.now[:alert] = 'Erro ao atualizar a ficha!'
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -33,7 +33,7 @@ class TrainingPlansController < ApplicationController
       redirect_to user_training_plans_path(params[:user_id]), notice: 'Ficha criada com sucesso!'
     else
       flash.now[:alert] = 'Erro ao cadastrar a ficha!'
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
