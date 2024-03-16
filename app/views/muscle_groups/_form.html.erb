@@ -1,0 +1,11 @@
+<%= form_with url: muscle_groups_new_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :day %>
+  <%= f.text_field :day %>
+
+  <% f.hidden_field :training_plan_id, :value => params[:training_plan_id] %>
+
+  <%= f.submit 'Cadastrar' %>
+<% end %>

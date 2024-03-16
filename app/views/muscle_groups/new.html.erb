@@ -1,0 +1,14 @@
+<% if @muscle_group.errors.any? %>
+  <p>Verifique os erros abaixo:</p>
+  <ul>
+    <% @muscle_group.errors.full_messages.each do |error_message| %>
+      <li><%= error_message %></li>
+    <%end %>
+  </ul>
+<% end %>
+
+<h1>Cadastro de Grupamento Muscular</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Voltar', root_path %>

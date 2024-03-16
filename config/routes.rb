@@ -22,5 +22,7 @@ Rails.application.routes.draw do
   patch '/users/:user_id/training_plans/:id/edit', to: 'training_plans#update'
 
   # muscle_groups
-  get '/muscle_groups/:training_plans_id', to: 'muscle_groups#user_muscle_group_list', as: 'user_muscle_group_list'
+  get '/muscle_groups/:training_plan_id', to: 'muscle_groups#user_muscle_group_list', as: 'user_muscle_group_list'
+  get '/training_plans/:training_plan_id/muscle_groups/new', to: 'muscle_groups#new', as: 'muscle_groups_new'
+  post '/training_plans/:training_plan_id/muscle_groups/new', to: 'muscle_groups#create'
 end

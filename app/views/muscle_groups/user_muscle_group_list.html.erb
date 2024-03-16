@@ -1,0 +1,11 @@
+<h1>Detalhes da Ficha</h1>
+
+<%= link_to 'Criar grupo muscular', muscle_groups_new_path %>
+
+<% @muscle_groups.each do |muscle_group| %>
+  <dl>
+    <dt><%= muscle_group.name %></dt>
+    <dd></dd>
+  </dl>
+<% end %>
+
