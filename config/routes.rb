@@ -25,4 +25,10 @@ Rails.application.routes.draw do
   get '/muscle_groups/:training_plan_id', to: 'muscle_groups#user_muscle_group_list', as: 'user_muscle_group_list'
   get '/training_plans/:training_plan_id/muscle_groups/new', to: 'muscle_groups#new', as: 'muscle_groups_new'
   post '/training_plans/:training_plan_id/muscle_groups/new', to: 'muscle_groups#create'
+
+  # exercices
+  get '/muscles_exercises', to: 'exercises#list_muscles_and_exercises', as: 'list_muscles_and_exercises'
+
+  # muscles_exercises
+  # get '/muscles_exercises', to: 'muscles_exercises#index'
 end

@@ -1,0 +1,20 @@
+<h1>Lista de Musculos e Exercicios</h1>
+
+<% if @muscles.empty? %>
+  <p>Não há nenhum registro para ser exibido</p>
+<% end %>
+
+<dl>
+  <% @muscles.each do |muscles_exercise| %>
+    <dt><%= muscles_exercise.first %></dt>
+    <% if exercices_by_muscle(muscles_exercise.last).blank? %>
+      <dd>Não há exercicíos cadastrados para esse musculo</dd>
+    <% else%>
+      <% exercices_by_muscle(muscles_exercise.last).each do |exercise| %>
+        <dd><%= exercise.name %></dd>
+      <% end %>
+    <% end %>
+  <% end %>
+</dl>
+
+<%= link_to 'Voltar', root_path %>
