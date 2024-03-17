@@ -29,6 +29,4 @@ Rails.application.routes.draw do
   # exercices
   get '/muscles_exercises', to: 'exercises#list_muscles_and_exercises', as: 'list_muscles_and_exercises'
 
-  # muscles_exercises
-  # get '/muscles_exercises', to: 'muscles_exercises#index'
 end
