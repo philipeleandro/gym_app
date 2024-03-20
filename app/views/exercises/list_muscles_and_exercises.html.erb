@@ -13,7 +13,7 @@
       <dd>Não há exercicíos cadastrados para esse musculo</dd>
     <% else%>
       <% exercices_by_muscle(muscles_exercise.last).each do |exercise| %>
-        <dd><%= exercise.name %></dd>
+        <dd><%= exercise.name.titleize %> - <%= link_to 'Apagar', exercise_delete_path(id: exercise.id), data: {'turbo-method': :delete} %></dd>
       <% end %>
     <% end %>
   <% end %>

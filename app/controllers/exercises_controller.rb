@@ -22,6 +22,13 @@ class ExercisesController < ApplicationController
     end
   end
 
+  def destroy
+    @exercise = Exercise.find(params[:id])
+
+    @exercise.destroy
+    redirect_to list_muscles_and_exercises_path, notice: 'Exercício deletado com sucesso!'
+  end
+
   private
 
   def exercises_params
