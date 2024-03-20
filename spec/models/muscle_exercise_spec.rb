@@ -3,13 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe MuscleExercise, type: :model do
-  let(:muscle) { create(:muscle) }
   let(:exercise) { create(:exercise) }
-  let(:instance) { create(:muscle_exercise, muscle: muscle, exercise: exercise) }
+  let!(:instance) { create(:muscle_exercise, exercise: exercise) }
 
   describe 'validations' do
     context 'when belongs_to' do
-      it { is_expected.to belong_to(:muscle) }
       it { is_expected.to belong_to(:exercise) }
       it { is_expected.to validate_presence_of(:set) }
       it { is_expected.to validate_presence_of(:repetition) }
