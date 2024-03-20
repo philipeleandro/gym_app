@@ -13,15 +13,15 @@ RSpec.describe ExercisesController, type: :system do
 
   context 'when muscle has exercises' do
     it 'with success' do
-      expect(page).to have_content('peito')
-      expect(page).to have_content('Supinho reto')
-      expect(page).to have_content('Supinho inclinado')
+      expect(page).to have_content('Peito')
+      expect(page).to have_content('Supinho Reto')
+      expect(page).to have_content('Supinho Inclinado')
     end
   end
 
   context 'when muscle does not have exercise' do
     it 'with success' do
-      expect(page).to have_content('costa')
+      expect(page).to have_content('Costas')
       expect(page).to have_content('Não há exercicíos cadastrados para esse musculo')
     end
   end

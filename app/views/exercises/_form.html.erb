@@ -1,0 +1,9 @@
+<%= form_with model: @exercise do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :status_id %>
+  <%= f.select :status_id, Exercise.status_ids %><br>
+
+  <%= f.submit 'Cadastrar' %>
+<% end %>

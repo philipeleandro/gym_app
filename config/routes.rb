@@ -28,5 +28,6 @@ Rails.application.routes.draw do
 
   # exercices
   get '/muscles_exercises', to: 'exercises#list_muscles_and_exercises', as: 'list_muscles_and_exercises'
-
+  get '/exercises/new', to: 'exercises#new'
+  post '/exercises', to: 'exercises#create'
 end
