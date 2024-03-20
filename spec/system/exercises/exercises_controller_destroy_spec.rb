@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe ExercisesController, type: :system do
   context 'when an exercise is deleted' do
-    let!(:exercise) { create(:exercise, name: 'Supinho reto', status_id:  1) }
+    let!(:exercise) { create(:exercise, name: 'Supinho reto', status_id: 1) }
 
     before do
       visit users_path

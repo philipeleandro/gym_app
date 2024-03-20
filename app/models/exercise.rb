@@ -14,5 +14,5 @@ class Exercise < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
-  scope :exercises_by_muscle, -> (muscle_id) { where('status_id = ?', muscle_id) }
+  scope :exercises_by_muscle, ->(muscle_id) { where('status_id = ?', muscle_id) }
 end
