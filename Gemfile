@@ -8,7 +8,7 @@ gem 'rails', '~> 7.1.1'
 
 gem 'sprockets-rails'
 
-gem 'sqlite3', '~> 1.4'
+gem "pg", "~> 1.1"
 
 gem 'puma', '>= 5.0'
 
@@ -29,6 +29,8 @@ gem 'pry', '~> 0.14.2'
 gem 'pry-remote', '~> 0.1.8'
 
 group :development, :test do
+  gem 'sqlite3', '~> 1.4'
+
   gem 'rspec-rails', '~> 6.1.0'
 
   gem 'debug', platforms: %i[mri windows]
