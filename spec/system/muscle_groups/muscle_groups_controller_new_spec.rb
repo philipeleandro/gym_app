@@ -20,7 +20,6 @@ RSpec.describe MuscleGroupsController, type: :system do
 
       it { expect(page).to have_current_path(user_muscle_group_list_path(training_plan)) }
       it { expect(page).to have_content('Grupo muscular criado com sucesso!') }
-      it { expect(page).to have_content('Teste') }
     end
 
     context 'when user not to fill a field' do

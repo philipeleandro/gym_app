@@ -4,7 +4,7 @@ class ExercisesController < ApplicationController
   before_action :convert_status_id_to_int, only: [:create]
 
   def list_muscles_and_exercises
-    @muscles = Exercise.status_ids
+    @muscles = Exercise.muscle_ids
   end
 
   def new
@@ -32,14 +32,14 @@ class ExercisesController < ApplicationController
   private
 
   def exercises_params
-    params.require(:exercise).permit(:name, :status_id)
+    params.require(:exercise).permit(:name, :muscle_id)
   end
 
   def convert_status_id_to_int
-    status_id = params.require(:exercise)[:status_id]
+    status_id = params.require(:exercise)[:muscle_id]
 
     return if status_id.blank?
 
-    params[:exercise][:status_id] = status_id.to_i
+    params[:exercise][:muscle_id] = status_id.to_i
   end
 end

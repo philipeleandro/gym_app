@@ -3,6 +3,6 @@
 FactoryBot.define do
   factory :exercise do
     name { 'MyString' }
-    status_id { nil }
+    muscle_id { nil }
   end
 end

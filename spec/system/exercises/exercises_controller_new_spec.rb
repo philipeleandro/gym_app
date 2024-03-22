@@ -10,7 +10,7 @@ RSpec.describe ExercisesController, type: :system do
         click_on 'Músculos e Exercicios'
         click_on 'Adicionar'
         fill_in 'Name', with: 'Supino reto'
-        select 'Peito', from: 'Status'
+        select 'Peito', from: 'Muscle'
         click_on 'Cadastrar'
       end
 
@@ -25,7 +25,7 @@ RSpec.describe ExercisesController, type: :system do
         click_on 'Músculos e Exercicios'
         click_on 'Adicionar'
         fill_in 'Name', with: ''
-        select 'Peito', from: 'Status'
+        select 'Peito', from: 'Muscle'
         click_on 'Cadastrar'
       end
 
@@ -33,14 +33,14 @@ RSpec.describe ExercisesController, type: :system do
       it { expect(Exercise.all.count).to eq(0) }
 
       context 'when has same exercise' do
-        let!(:exercise) { create(:exercise, name: 'Supino declinado', status_id: 1)}
+        let!(:exercise) { create(:exercise, name: 'Supino declinado', muscle_id: 1)}
 
         before do
           visit root_path
           click_on 'Músculos e Exercicios'
           click_on 'Adicionar'
           fill_in 'Name', with: 'Supino declinado'
-          select 'Peito', from: 'Status'
+          select 'Peito', from: 'Muscle'
           click_on 'Cadastrar'
         end
 

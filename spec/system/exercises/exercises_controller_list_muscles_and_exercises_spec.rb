@@ -3,8 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe ExercisesController, type: :system do
-  let!(:exercise) { create(:exercise, name: 'Supinho reto', status_id: 1) }
-  let!(:exercise_two) { create(:exercise, name: 'Supinho inclinado', status_id: 1) }
+  let!(:exercise) { create(:exercise, name: 'Supinho reto', muscle_id: 1) }
+  let!(:exercise_two) { create(:exercise, name: 'Supinho inclinado', muscle_id: 1) }
 
   before do
     visit root_path
