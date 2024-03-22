@@ -1,14 +1,15 @@
 # frozen_string_literal: true
 
 class Exercise < ApplicationRecord
-  enum status_id: { 'peito' => 1,
-                    'costas' => 2,
-                    'bíceps' => 3,
-                    'tríceps' => 4,
-                    'trapézio' => 5,
-                    'ombro' => 6,
-                    'glúteo' => 7,
-                    'abdômen' => 8 }
+  enum status_id: { 'Peito' => 1,
+                    'Costas' => 2,
+                    'Bíceps' => 3,
+                    'Tríceps' => 4,
+                    'Trapézio' => 5,
+                    'Ombro' => 6,
+                    'Glúteo' => 7,
+                    'Abdômen' => 8,
+                    'Perna' => 9 }
 
   has_many :muscle_exercises, dependent: :destroy
 
