@@ -1,0 +1,14 @@
+<% if @muscle_exercise.errors.any? %>
+  <p>Verifique os erros abaixo:</p>
+  <ul>
+    <% @muscle_exercise.errors.full_messages.each do |error_message| %>
+      <li><%= error_message %></li>
+    <%end %>
+  </ul>
+<% end %>
+
+<h1>Cadastro de exercício na ficha</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Voltar', root_path %>

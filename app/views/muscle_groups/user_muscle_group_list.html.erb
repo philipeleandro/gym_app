@@ -5,6 +5,7 @@
 <% @muscle_groups.each do |muscle_group| %>
   <dl>
     <dt><%= muscle_group.name %></dt>
+    <%= link_to 'Adicionar exercício', muscle_exercise_new_path(muscle_group_id: muscle_group.id) %>
     <dd></dd>
   </dl>
 <% end %>

@@ -1,0 +1,19 @@
+<%= form_with model: @muscle_exercise, url: muscle_exercise_create_path(muscle_group_id: params[:muscle_group_id]) do |f| %>
+    <%= f.label :exercise_id %><br />
+    <%= f.select :exercise_id, separate_by_muscle %><br>
+
+    <%= f.label :set %><br />
+    <%= f.number_field :set, min: 1 %><br>
+
+    <%= f.label :repetition %><br />
+    <%= f.number_field :repetition, min: 1 %><br>
+
+    <%= f.label :observation %><br />
+    <%= f.text_field :observation, placeholder: 'Opcional' %><br>
+
+    <%= f.fields_for  @muscle_exercise.exercise_group do |exercise_group_f| %>
+      <% exercise_group_f.hidden_field :muscle_group_id, :value => params[:muscle_group_id] %>
+    <% end %>
+
+  <%= f.submit "Criar Conta" %>
+<% end %>

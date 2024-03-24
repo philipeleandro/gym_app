@@ -31,4 +31,8 @@ Rails.application.routes.draw do
   get '/exercises/new', to: 'exercises#new'
   post '/exercises', to: 'exercises#create'
   delete '/exercises/:id', to: 'exercises#destroy', as: 'exercise_delete'
+
+  # muscle_exercises
+  get '/group/:muscle_group_id/muscle_exercises/new', to: 'muscle_exercises#new', as: 'muscle_exercise_new'
+  post '/group/:muscle_group_id/muscle_exercises/new', to: 'muscle_exercises#create', as: 'muscle_exercise_create'
 end
