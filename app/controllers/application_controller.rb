@@ -4,4 +4,5 @@ class ApplicationController < ActionController::Base
   include MuscleGroupHelper
   include TrainingPlanHelper
   include ExerciseHelper
+  include MuscleExerciseHelper
 end
