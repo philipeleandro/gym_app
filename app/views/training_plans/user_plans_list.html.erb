@@ -1,30 +1,28 @@
 <h1>Fichas de <%= @user.name %></h1>
 
-<% if @training_plans.empty? %>
-  <p>Não há fichas cadastradas</p>
-<% end %>
-
 <%= link_to 'Criar ficha', training_plan_new_path(@user.id) %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Ação</th>
-    </tr>
-   </thead>
-  <tbody>
-    <%  @training_plans.each do |plan| %>
+<% if @training_plans.empty? %>
+  <p>Não há fichas cadastradas</p>
+<% else %>
+  <table>
+    <thead>
       <tr>
-        <td><%= plan.name %></td>
+        <th>Nome</th>
+        <th>Ação</th>
       </tr>
-      <tr>
-        <td><%= link_to 'Detalhes', user_muscle_group_list_path(plan.id) %></td>
-        <td><%= link_to 'Apagar', user_plans_delete_path(user_id: @user.id, id: plan.id), data: {'turbo-method': :delete} %></td>
-        <td><%= link_to 'Editar', user_plans_edit_path(user_id: @user.id, id: plan.id) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <%  @training_plans.each do |plan| %>
+        <tr>
+          <td><%= plan.name %></td>
+          <td><%= link_to 'Detalhes', user_muscle_group_list_path(plan.id) %></td>
+          <td><%= link_to 'Apagar', user_plans_delete_path(user_id: @user.id, id: plan.id), data: {'turbo-method': :delete} %></td>
+          <td><%= link_to 'Editar', user_plans_edit_path(user_id: @user.id, id: plan.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
 
 <%= link_to 'Voltar', users_path %>
