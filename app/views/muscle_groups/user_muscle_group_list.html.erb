@@ -4,9 +4,37 @@
 
 <% @muscle_groups.each do |muscle_group| %>
   <dl>
-    <dt><%= muscle_group.name %></dt>
-    <%= link_to 'Adicionar exercício', muscle_exercise_new_path(muscle_group_id: muscle_group.id) %>
-    <dd></dd>
+    <dt><%= muscle_group.name %> - <%= link_to 'Adicionar exercício', muscle_exercise_new_path(muscle_group_id: muscle_group.id) %></dt>
+    <dd>
+      <% @exercises = find_exercises(muscle_group.id) %>
+      <% unless @exercises.empty? %>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Repetição</th>
+              <th>Serie</th>
+              <th>Observação</th>
+              <th>Músculo</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @exercises.each do |muscle_exercise| %>
+              <tr>
+                <td><%= muscle_exercise.exercise.name %></td>
+                <td><%= muscle_exercise.repetition %></td>
+                <td><%= muscle_exercise.set %></td>
+                <td><%= muscle_exercise.observation.blank? ? '-' : muscle_exercise.observation %></td>
+                <td><%= muscle_exercise.exercise.muscle_id %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <p>Não há exercícios cadastrados para esse dia</p>
+      <% end %>
+    </dd>
   </dl>
 <% end %>
 
