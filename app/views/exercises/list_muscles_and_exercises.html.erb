@@ -10,7 +10,7 @@
   <% @muscles.each do |muscles_exercise| %>
     <dt><%= muscles_exercise.first.titleize %></dt>
     <% if exercices_by_muscle(muscles_exercise.last).blank? %>
-      <dd>Não há exercicíos cadastrados para esse musculo</dd>
+      <dd>Não há exercicíos cadastrados para esse músculo</dd>
     <% else%>
       <% exercices_by_muscle(muscles_exercise.last).each do |exercise| %>
         <dd><%= exercise.name.titleize %> - <%= link_to 'Apagar', exercise_delete_path(id: exercise.id), data: {'turbo-method': :delete} %></dd>
