@@ -27,6 +27,7 @@
                 <td><%= muscle_exercise.set %></td>
                 <td><%= muscle_exercise.observation.blank? ? '-' : muscle_exercise.observation %></td>
                 <td><%= muscle_exercise.exercise.muscle_id %></td>
+                <td><%= link_to 'Apagar', muscle_exercise_delete_path(muscle_group_id: muscle_group.id, id: muscle_exercise.id), data: {'turbo-method': :delete} %></td>
               </tr>
             <% end %>
           </tbody>

@@ -6,4 +6,8 @@ module MuscleGroupHelper
                   .where(exercise_group: { muscle_group_id: muscle_group_id })
                   .order(:exercise_id)
   end
+
+  def find_training_plan(id)
+    MuscleGroup.find(id).training_plan
+  end
 end

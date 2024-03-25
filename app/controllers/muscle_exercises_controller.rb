@@ -15,6 +15,14 @@ class MuscleExercisesController < ApplicationController
     end
   end
 
+  def destroy
+    @training_plan = find_training_plan(params[:muscle_group_id])
+    @muscle_exercise = MuscleExercise.find(params[:id])
+
+    @muscle_exercise.destroy
+    redirect_to user_muscle_group_list_path(@training_plan.id), notice: 'Exercício deletado com sucesso!'
+  end
+
   private
 
   def permmited_params
