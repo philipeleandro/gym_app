@@ -22,7 +22,7 @@
           <tbody>
             <% @exercises.each do |muscle_exercise| %>
               <tr>
-                <td><%= muscle_exercise.exercise.name %></td>
+                <td><%= muscle_exercise.exercise.name.titleize %></td>
                 <td><%= muscle_exercise.repetition %></td>
                 <td><%= muscle_exercise.set %></td>
                 <td><%= muscle_exercise.observation.blank? ? '-' : muscle_exercise.observation %></td>
