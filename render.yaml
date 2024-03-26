@@ -6,7 +6,7 @@ databases:
 
 services:
   - type: web
-    name: gym
+    name: gym_app_web
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
