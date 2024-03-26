@@ -11,4 +11,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Voltar', root_path %>
+<%= link_to 'Voltar', user_muscle_group_list_path(training_plan_id: find_training_plan(params[:muscle_group_id]).id) %>
