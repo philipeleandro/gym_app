@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class MuscleGroupsController < ApplicationController
-  before_action :find_traning_plan, only: %i[user_muscle_group_list create]
+  before_action :find_traning_plan, only: %i[user_muscle_group_list create destroy]
 
   def user_muscle_group_list
     @muscle_groups = @training_plan.muscle_groups
@@ -19,6 +19,15 @@ class MuscleGroupsController < ApplicationController
     else
       flash.now[:alert] = 'Erro ao cadastrar grupo muscular!'
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    begin
+      response_service = ::MuscleGroups::Destroy.new(params[:muscle_group_id]).run!
+      redirect_to user_muscle_group_list_path(@training_plan), notice: 'Grupo muscular excluído com sucesso!'
+    rescue => e
+      redirect_to user_muscle_group_list_path(@training_plan), alert: e.message
     end
   end
 

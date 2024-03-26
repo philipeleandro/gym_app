@@ -11,7 +11,7 @@ module MuscleExercises
       begin
         parsed_response
       rescue => e
-        raise StandardError.new "#{e.message} - Backtrace: #{e.backtrace[0..2]}"
+        raise StandardError.new "#{e.message} - Backtrace: #{e.backtrace[0..4]}"
       end
     end
 
