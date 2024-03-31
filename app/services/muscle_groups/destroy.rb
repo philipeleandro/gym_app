@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MuscleGroups
   class Destroy
     attr_accessor :muscle_group_id

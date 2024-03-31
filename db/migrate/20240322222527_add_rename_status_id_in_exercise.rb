@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddRenameStatusIdInExercise < ActiveRecord::Migration[7.1]
   def self.up
     rename_column :exercises, :status_id, :muscle_id

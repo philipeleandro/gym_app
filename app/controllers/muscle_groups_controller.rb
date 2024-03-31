@@ -23,12 +23,10 @@ class MuscleGroupsController < ApplicationController
   end
 
   def destroy
-    begin
-      response_service = ::MuscleGroups::Destroy.new(params[:muscle_group_id]).run!
-      redirect_to user_muscle_group_list_path(@training_plan), notice: 'Grupo muscular excluído com sucesso!'
-    rescue => e
-      redirect_to user_muscle_group_list_path(@training_plan), alert: e.message
-    end
+    ::MuscleGroups::Destroy.new(params[:muscle_group_id]).run!
+    redirect_to user_muscle_group_list_path(@training_plan), notice: 'Grupo muscular excluído com sucesso!'
+  rescue => e
+    redirect_to user_muscle_group_list_path(@training_plan), alert: e.message
   end
 
   private

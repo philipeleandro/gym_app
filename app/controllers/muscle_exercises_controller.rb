@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MuscleExercisesController < ApplicationController
   def new
     @muscle_exercise = MuscleExercise.new
@@ -8,7 +10,8 @@ class MuscleExercisesController < ApplicationController
 
     begin
       response = ::MuscleExercises::Create.new(muscle_exercise_params, exercise_group_params).run!
-      redirect_to user_muscle_group_list_path(response[:training_plan_id]), notice: 'Exercício adicionado a ficha com sucesso!'
+      redirect_to user_muscle_group_list_path(response[:training_plan_id]),
+                  notice: 'Exercício adicionado a ficha com sucesso!'
     rescue => e
       flash.now[:alert] = e.message
       render :new, status: :unprocessable_entity
@@ -26,7 +29,8 @@ class MuscleExercisesController < ApplicationController
   private
 
   def permmited_params
-    params.require(:muscle_exercise).permit(:exercise_id, :set, :observation, :repetition, :muscle_exercise_id, exercise_group: [:muscle_group_id])
+    params.require(:muscle_exercise).permit(:exercise_id, :set, :observation, :repetition, :muscle_exercise_id,
+                                            exercise_group: [:muscle_group_id])
   end
 
   def muscle_exercise_params

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MuscleExercises
   class Create
     attr_accessor :exercise_group_params, :muscle_exercise_params
@@ -8,11 +10,9 @@ module MuscleExercises
     end
 
     def run!
-      begin
-        parsed_response
-      rescue => e
-        raise StandardError.new, "#{e.message} - Backtrace: #{e.backtrace[0..4]}"
-      end
+      parsed_response
+    rescue => e
+      raise StandardError.new, "#{e.message} - Backtrace: #{e.backtrace[0..4]}"
     end
 
     def creation_process!
@@ -51,12 +51,10 @@ module MuscleExercises
     end
 
     def parsed_response
-      begin
-        { success: creation_process!,
-          training_plan_id: training_plan.id }
-      rescue => e
-        raise StandardError.new, e.message
-      end
+      { success: creation_process!,
+        training_plan_id: training_plan.id }
+    rescue => e
+      raise StandardError.new, e.message
     end
   end
 end
