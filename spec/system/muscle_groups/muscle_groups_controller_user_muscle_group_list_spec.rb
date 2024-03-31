@@ -9,9 +9,9 @@ RSpec.describe MuscleGroupsController, type: :system do
 
   context 'when user list his exercises' do
     context 'with success' do
-      let(:exercise) { create(:exercise, name: "Teste", muscle_id: 1) }
+      let(:exercise) { create(:exercise, name: 'Teste', muscle_id: 1) }
       let(:muscle_exercise) { create(:muscle_exercise, exercise: exercise, repetition: 10, set: 3) }
-      let!(:exercise_group) { create(:exercise_group, muscle_group: muscle_group, muscle_exercise: muscle_exercise)}
+      let!(:exercise_group) { create(:exercise_group, muscle_group: muscle_group, muscle_exercise: muscle_exercise) }
 
       before do
         visit root_path

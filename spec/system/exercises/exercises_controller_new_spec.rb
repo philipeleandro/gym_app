@@ -33,7 +33,7 @@ RSpec.describe ExercisesController, type: :system do
       it { expect(Exercise.all.count).to eq(0) }
 
       context 'when has same exercise' do
-        let!(:exercise) { create(:exercise, name: 'Supino declinado', muscle_id: 1)}
+        let!(:exercise) { create(:exercise, name: 'Supino declinado', muscle_id: 1) }
 
         before do
           visit root_path
