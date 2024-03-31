@@ -22,7 +22,7 @@ RSpec.describe ExercisesController, type: :system do
   context 'when muscle does not have exercise' do
     it 'with success' do
       expect(page).to have_content('Costas')
-      expect(page).to have_content('Não há exercicíos cadastrados para esse musculo')
+      expect(page).to have_content('Não há exercicíos cadastrados para esse músculo')
     end
   end
 end
