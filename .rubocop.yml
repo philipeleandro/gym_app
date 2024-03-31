@@ -79,4 +79,7 @@ RSpec/MultipleExpectations:
   Max: 5
 
 Rails/ReversibleMigration:
- Enabled: false
+  Enabled: false
+
+Style/RescueStandardError:
+  Enabled: false

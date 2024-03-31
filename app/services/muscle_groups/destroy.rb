@@ -13,10 +13,10 @@ module MuscleGroups
           muscle_group.delete
           muscle_exercises.delete_all
         rescue => e
-          raise StandardError.new e.message
+          raise StandardError.new, e.message
         end
       rescue => e
-        raise StandardError.new e.message
+        raise StandardError.new, e.message
       end
     end
 
@@ -31,7 +31,7 @@ module MuscleGroups
     end
 
     def muscle_exercises
-      MuscleExercise.joins(:exercise_group).where(exercise_group: {id: [exercise_groups.pluck(:id)]})
+      MuscleExercise.joins(:exercise_group).where(exercise_group: { id: [exercise_groups.pluck(:id)] })
     end
   end
 end
