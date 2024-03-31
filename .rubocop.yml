@@ -19,7 +19,7 @@ Metrics/ClassLength:
 
 Metrics/MethodLength:
   CountAsOne: ['array', 'hash', 'heredoc']
-  Max: 12
+  Max: 20
 
 Rails/UniqueValidationWithoutIndex:
   Enabled: false
@@ -82,4 +82,7 @@ Rails/ReversibleMigration:
   Enabled: false
 
 Style/RescueStandardError:
+  Enabled: false
+
+Style/GuardClause:
   Enabled: false
