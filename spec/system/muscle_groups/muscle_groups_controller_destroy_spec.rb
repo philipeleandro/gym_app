@@ -53,9 +53,11 @@ RSpec.describe MuscleGroupsController, type: :system do
   context 'when has error' do
     let(:exercise) { create(:exercise, name: 'Teste', muscle_id: 1) }
     let(:muscle_exercise) { create(:muscle_exercise, exercise: exercise, repetition: 10, set: 3) }
+    let(:instance) { ::MuscleGroups::Destroy.new(muscle_group.id) }
 
     before do
-      allow_any_instance_of(::MuscleGroups::Destroy).to receive(:run!).and_raise(StandardError, 'Error')
+      allow(::MuscleGroups::Destroy).to receive(:new).and_return(instance)
+      allow(instance).to receive(:run!).and_raise(StandardError, 'Error')
 
       visit root_path
       click_on 'Usuários'
