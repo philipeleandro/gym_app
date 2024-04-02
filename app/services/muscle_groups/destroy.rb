@@ -11,9 +11,9 @@ module MuscleGroups
     def run!
       ActiveRecord::Base.transaction do
         begin
+          muscle_exercises.destroy_all
           exercise_groups.delete_all
           muscle_group.delete
-          muscle_exercises.delete_all
         rescue => e
           raise StandardError.new, e.message
         end
@@ -25,11 +25,11 @@ module MuscleGroups
     private
 
     def muscle_group
-      @muscle_group ||= MuscleGroup.find(muscle_group_id)
+      MuscleGroup.find(muscle_group_id)
     end
 
     def exercise_groups
-      @exercise_groups ||= ExerciseGroup.where(muscle_group_id: muscle_group_id)
+      ExerciseGroup.where(muscle_group_id: muscle_group_id)
     end
 
     def muscle_exercises

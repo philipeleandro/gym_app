@@ -4,7 +4,9 @@
 
 <% @muscle_groups.each do |muscle_group| %>
   <dl>
-    <dt><%= muscle_group.name %> - <%= link_to 'Adicionar exercício', muscle_exercise_new_path(muscle_group_id: muscle_group.id) %> | <%= link_to 'Apagar', muscle_group_delete_path(muscle_group_id: muscle_group.id, training_plan_id: muscle_group.training_plan_id) %> </dt>
+     <div id='delete_muscle_group'>
+        <dt><%= muscle_group.name %> - <%= link_to 'Adicionar exercício', muscle_exercise_new_path(muscle_group_id: muscle_group.id) %> |<%= link_to 'Apagar', muscle_group_delete_path(muscle_group_id: muscle_group.id, training_plan_id: muscle_group.training_plan_id) %></dt>
+      </div>
     <dd>
       <% @exercises = find_exercises(muscle_group.id) %>
       <% unless @exercises.empty? %>
