@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe MuscleGroupsController, type: :system do
+RSpec.describe MuscleExercisesController, type: :system do
   let(:user) { create(:user) }
   let(:training_plan) { create(:training_plan, user: user) }
   let!(:muscle_group) { create(:muscle_group, training_plan: training_plan) }
@@ -44,7 +44,7 @@ RSpec.describe MuscleGroupsController, type: :system do
         click_on 'Cadastrar'
       end
 
-      it { expect(page).to have_current_path(muscle_exercise_new_path(muscle_group_id: muscle_group.id))  }
+      it { expect(page).to have_current_path(muscle_exercise_new_path(muscle_group_id: muscle_group.id)) }
       it { expect(page).to have_content('Erro ao salvar') }
       it { expect(page).to have_content('Backtrace:') }
     end
