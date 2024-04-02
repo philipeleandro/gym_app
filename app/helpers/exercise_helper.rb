@@ -8,7 +8,7 @@ module ExerciseHelper
   def separate_by_muscle
     ordered_muscles = []
 
-    Exercise.muscle_ids.each do |_muscle_name, muscle_id|
+    Exercise.muscle_ids.each_value do |muscle_id|
       ordered_muscles << " -> #{Exercise.muscle_ids.key(muscle_id).upcase} "
 
       Exercise.where(muscle_id: muscle_id).each do |exercise|
