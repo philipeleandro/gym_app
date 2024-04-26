@@ -5,6 +5,12 @@ databases:
     plan: free
 
 services:
+  - type: redis
+    name: sidekiq-redis
+    region: ohio
+    maxmemortPolicy: noeviction
+    ipAllowList: []
+
   - type: web
     name: gym_app_web
     runtime: ruby
