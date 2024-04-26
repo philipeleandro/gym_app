@@ -8,7 +8,7 @@ services:
   - type: redis
     name: sidekiq-redis
     region: ohio
-    maxmemortPolicy: noeviction
+    maxmemoryPolicy: noeviction
     ipAllowList: []
 
   - type: web
