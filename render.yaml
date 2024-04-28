@@ -5,11 +5,6 @@ databases:
     plan: free
 
 services:
-  - type: redis
-    name: redis-sidekiq
-    ipAllowList:
-      - source: 0.0.0.0/0
-        description: everywhere
  - type: worker
     name: sidekiq-worker
     runtime: ruby
