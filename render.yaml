@@ -11,7 +11,7 @@ services:
       - source: 0.0.0.0/0
         description: everywhere
     plan: free
-    maxmemoryPolicy: noeviction # Default: allkeys-lru
+    maxmemoryPolicy: noeviction
  - type: worker
     name: sidekiq-worker
     runtime: ruby
