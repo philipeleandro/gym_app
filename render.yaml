@@ -6,11 +6,10 @@ databases:
 
 services:
   - type: redis
-    name: lightning
+    name: redis-sidekiq
     ipAllowList:
       - source: 0.0.0.0/0
         description: everywhere
-    plan: free
  - type: worker
     name: sidekiq-worker
     runtime: ruby
