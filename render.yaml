@@ -6,14 +6,16 @@ databases:
 
 services:
   - type: redis
-    name: sidekiq-redis
-    region: ohio
-    maxmemoryPolicy: noeviction
-    ipAllowList: []
+    name: lightning
+    ipAllowList:
+      - source: 0.0.0.0/0
+        description: everywhere
+    plan: free
+    maxmemoryPolicy: noeviction # Default: allkeys-lru
  - type: worker
     name: sidekiq-worker
     runtime: ruby
-    region: ohio
+    plan: free
     buildCommand: bundle install
     startCommand: bundle exec sidekiq
     envVars:
