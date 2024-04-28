@@ -5,20 +5,6 @@ databases:
     plan: free
 
 services:
- - type: worker
-    name: sidekiq-worker
-    runtime: ruby
-    plan: free
-    buildCommand: bundle install
-    startCommand: bundle exec sidekiq
-    envVars:
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: sidekiq-redis
-          property: connectionString
-      - key: RA
-        sync: false
   - type: web
     name: gym_app_web
     runtime: ruby
@@ -27,12 +13,9 @@ services:
     # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "bundle exec rails server"
     envVars:
-      - key: REDIS_URL
-      # - key: DATABASE_URL
+      - key: DATABASE_URL
         fromDatabase:
-          type: redis
-          # name: gym_app_database
-          name: sidekiq-redis
+          name: gym_app_database
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
