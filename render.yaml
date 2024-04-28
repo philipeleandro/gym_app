@@ -10,7 +10,6 @@ services:
     region: ohio
     maxmemoryPolicy: noeviction
     ipAllowList: []
-
  - type: worker
     name: sidekiq-worker
     runtime: ruby
@@ -25,7 +24,6 @@ services:
           property: connectionString
       - key: RA
         sync: false
-
   - type: web
     name: gym_app_web
     runtime: ruby
@@ -45,4 +43,3 @@ services:
         sync: false
       - key: WEB_CONCURRENCY
         value: 4 # sensible default
-        
