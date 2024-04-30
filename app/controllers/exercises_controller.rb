@@ -4,6 +4,8 @@ class ExercisesController < ApplicationController
   before_action :convert_status_id_to_int, only: [:create]
 
   def list_muscles_and_exercises
+    CreateUser.perfom_async
+
     @muscles = Exercise.muscle_ids
   end
 
