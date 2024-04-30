@@ -31,3 +31,5 @@ services:
           type: redis
           name: redis-sidekiq
           property: connectionString
+      - key: PORT
+        value: 10000
