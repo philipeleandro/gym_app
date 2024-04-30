@@ -8,8 +8,9 @@ services:
   - type: redis
     name: redis-sidekiq
     plan: free
-    region: oregan
+    region: ohio
     maxmemoryPolicy: noeviction
+    ipAllowList: []
   - type: web
     name: gym_app_web
     runtime: ruby
