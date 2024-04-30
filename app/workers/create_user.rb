@@ -2,6 +2,6 @@ class CreateUser
   include Sidekiq::Worker
 
   def perform
-    User.create(namne: 'Teste')
+    User.create(name: 'Teste')
   end
 end
