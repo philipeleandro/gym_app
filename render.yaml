@@ -5,6 +5,11 @@ databases:
     plan: free
 
 services:
+  - type: redis
+    name: redis-sidekiq
+    plan: free
+    region: oregan
+  maxmemoryPolicy: noeviction
   - type: web
     name: gym_app_web
     runtime: ruby
