@@ -34,8 +34,8 @@ services:
           property: connectionString
   - type: worker
     name: sidekiq-worker
-    env: ruby
-    region: oregon
+    runtime: ruby
+    region: ohio
     buildCommand: bundle install
     startCommand: bundle exec sidekiq
     envVars:
