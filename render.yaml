@@ -9,7 +9,7 @@ services:
     name: redis-sidekiq
     plan: free
     region: oregan
-  maxmemoryPolicy: noeviction
+    maxmemoryPolicy: noeviction
   - type: web
     name: gym_app_web
     runtime: ruby
