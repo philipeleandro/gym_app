@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require "sidekiq/web"
 Rails.application.routes.draw do
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
@@ -38,4 +38,7 @@ Rails.application.routes.draw do
   get '/group/:muscle_group_id/muscle_exercises/new', to: 'muscle_exercises#new', as: 'muscle_exercise_new'
   post '/group/:muscle_group_id/muscle_exercises/new', to: 'muscle_exercises#create', as: 'muscle_exercise_create'
   delete '/group/:muscle_group_id/muscle_exercises/:id', to: 'muscle_exercises#destroy', as: 'muscle_exercise_delete'
+
+
+  mount Sidekiq::Web => '/sidekiq'
 end

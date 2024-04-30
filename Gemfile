@@ -28,6 +28,10 @@ gem 'pry', '~> 0.14.2'
 
 gem 'pry-remote', '~> 0.1.8'
 
+gem "redis"
+
+gem "sidekiq"
+
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
 
