@@ -16,7 +16,6 @@ services:
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
-    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "bundle exec sidekiq -q default"
     envVars:
       - key: DATABASE_URL
@@ -26,9 +25,11 @@ services:
       - key: RAILS_MASTER_KEY
         sync: false
       - key: WEB_CONCURRENCY
-        value: 4 # sensible default
+        value: 4
       - key: REDIS_URL
         fromService:
           type: redis
           name: redis-sidekiq
           property: connectionString
+      - key: PORT
+        value: 10000
