@@ -2,7 +2,7 @@
 # exit on error
 set -o errexit
 
-export PORT=1000
+export PORT=10000
 
 bundle install
 bundle exec rails assets:precompile
