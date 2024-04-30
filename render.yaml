@@ -30,5 +30,5 @@ services:
       - key: REDIS_URL
         fromService:
           type: redis
-          name: sidekiq-redis
+          name: redis-sidekiq
           property: connectionString
