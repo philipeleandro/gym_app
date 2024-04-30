@@ -11,6 +11,20 @@ services:
     region: oregon
     maxmemoryPolicy: noeviction
     ipAllowList: []
+- type: worker
+    name: sidekiq-worker
+    runtime: ruby
+    region: ohio
+    buildCommand: bundle install
+    startCommand: bundle exec sidekiq
+    envVars:
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: redis-sidekiq
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
   - type: web
     name: gym_app_web
     runtime: ruby
@@ -32,17 +46,3 @@ services:
           type: redis
           name: redis-sidekiq
           property: connectionString
-  - type: worker
-    name: sidekiq-worker
-    runtime: ruby
-    region: ohio
-    buildCommand: bundle install
-    startCommand: bundle exec sidekiq
-    envVars:
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: redis-sidekiq
-          property: connectionString
-      - key: RAILS_MASTER_KEY
-        sync: false
