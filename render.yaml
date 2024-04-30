@@ -35,7 +35,7 @@ services:
   - type: worker
     name: sidekiq-worker
     env: ruby
-    region: ohio
+    region: oregon
     buildCommand: bundle install
     startCommand: bundle exec sidekiq
     envVars:
