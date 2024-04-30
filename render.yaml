@@ -27,3 +27,8 @@ services:
         sync: false
       - key: WEB_CONCURRENCY
         value: 4 # sensible default
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: sidekiq-redis
+          property: connectionString
