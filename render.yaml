@@ -16,7 +16,7 @@ services:
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec sidekiq -q default"
+    startCommand: bundle exec rails s -d 10000
     envVars:
       - key: DATABASE_URL
         fromDatabase:
